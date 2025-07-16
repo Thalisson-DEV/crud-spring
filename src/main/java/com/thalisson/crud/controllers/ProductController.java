@@ -12,6 +12,54 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * <p>
+ * Esta classe serve como controlador REST para gerenciar operações relacionadas a produtos.
+ * Ela fornece endpoints para manipular operações CRUD em produtos no sistema.
+ * A classe aproveita os recursos REST e injeção de dependência do Spring Boot
+ * para simplificar o processamento de requisições HTTP e interações com o banco de dados.
+ * </p>
+ * <p>
+ * Endpoints:
+ * <br>
+ * - GET /products: Recupera a lista de todos os produtos no banco de dados.
+ * <br>
+ * - POST /products: Cria e persiste um novo produto com base nos dados fornecidos.
+ * <br>
+ * - GET /products/{id}: Recupera um produto específico pelo seu ID.
+ * <br>
+ * - DELETE /products/{id}: Exclui um produto específico pelo seu ID.
+ * <br>
+ * - PUT /products/{id}: Atualiza os detalhes de um produto existente pelo seu ID.
+ * </p>
+ * <p>
+ * Anotações:
+ * <br>
+ * - @RestController: Indica que esta classe é um Controlador REST do Spring.
+ * <br>
+ * - @RequestMapping: Mapeia requisições HTTP para métodos específicos na classe.
+ * </p>
+ * <p>
+ * Dependências:
+ * <br>
+ * - {@link ProductRepository}: Usado para interagir com o banco de dados para dados de produtos.
+ * <br>
+ * - {@link ProductDto}: Representa o objeto de transferência de dados para requisições relacionadas a produtos.
+ * <br>
+ * - {@link Product}: Representa a entidade de produto armazenada no banco de dados.
+ * </p>
+ * <p>
+ * Códigos de Status HTTP:
+ * <br>
+ * - 200 OK: Para recuperação ou exclusão bem-sucedida de recursos.
+ * <br>
+ * - 201 CREATED: Para criação bem-sucedida de um novo produto.
+ * <br>
+ * - 302 FOUND: Quando um recurso é localizado com sucesso via ID.
+ * <br>
+ * - 404 NOT FOUND: Quando o ID do produto especificado não existe.
+ * </p>
+ */
 @RestController
 @RequestMapping("/products")
 public class ProductController {

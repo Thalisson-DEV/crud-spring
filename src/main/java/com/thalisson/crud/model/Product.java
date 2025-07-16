@@ -2,6 +2,27 @@ package com.thalisson.crud.model;
 
 import jakarta.persistence.*;
 
+/**
+ * Representa uma entidade de produto armazenada no banco de dados. Esta classe está mapeada
+ * para uma tabela do banco de dados chamada "product".
+ * <p>
+ * Esta classe de entidade é usada para gerenciar registros de produtos, e contém atributos
+ * como ID do produto, nome e preço. O ID é gerado automaticamente, garantindo uma
+ * identificação única para cada produto.
+ * <p>
+ * A classe é utilizada para operações CRUD no sistema, incluindo criação,
+ * recuperação, atualização e exclusão de dados do produto.
+ * <p>
+ * Anotações:
+ * <br>
+ * - @Entity: Identifica esta classe como uma entidade JPA.
+ * <br>
+ * - @Table: Especifica a tabela no banco de dados para a qual esta entidade está mapeada.
+ * <br>
+ * - @Id: Marca o campo da chave primária.
+ * <br>
+ * - @GeneratedValue: Indica que a chave primária é gerada automaticamente usando uma estratégia específica.
+ */
 @Entity(name = "product")
 @Table(name = "product")
 public class Product {
